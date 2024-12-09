@@ -1,20 +1,17 @@
 "use client";
 
-import "./globals.css";
+import dynamic from "next/dynamic";
 import markers from "@/app/data/markers.json";
-import Map from "@/components/Map";
+
+const Map = dynamic(() => import("@/components/Map"), { ssr: false });
 
 export default function Home() {
   return (
     <div>
-      <header className="header">
+      <header>
         <h1>Hosted by Jolly & Bright</h1>
       </header>
-      {typeof window !== "undefined" ? (
-        <Map markers={markers} />
-      ) : (
-        <p>Loading map...</p>
-      )}
+      <Map markers={markers} />
     </div>
   );
 }
