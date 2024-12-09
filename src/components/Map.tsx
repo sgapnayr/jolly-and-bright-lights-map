@@ -46,7 +46,7 @@ const Map: React.FC<MapProps> = ({ markers }) => {
         key="main-map"
         center={center}
         zoom={13}
-        style={{ height: "calc(100vh - 100px)", width: "100%" }}
+        style={{ height: "calc(101vh - 100px)", width: "100%" }}
       >
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
