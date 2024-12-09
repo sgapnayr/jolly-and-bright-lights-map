@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "House 1",
+    "lat": 30.3183,
+    "lng": -85.8561,
+    "photo": "/lights.jpg",
+    "description": "Beautiful lights with a reindeer display!"
+  }
+]
