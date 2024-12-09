@@ -12,7 +12,6 @@ const sheets = google.sheets({
   }),
 });
 
-// Replace with your actual Google Sheet ID from environment variables
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
 
 export default async function handler(

@@ -102,7 +102,7 @@ const AdminForm: React.FC = () => {
                     })
                   }
                   required
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
                 />
                 <div className="relative">
                   <input
@@ -116,7 +116,7 @@ const AdminForm: React.FC = () => {
                       })
                     }
                     required
-                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
                   />
                   <button
                     type="button"
@@ -175,7 +175,7 @@ const AdminForm: React.FC = () => {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
           <input
             type="number"
@@ -183,7 +183,7 @@ const AdminForm: React.FC = () => {
             value={formData.lat}
             onChange={(e) => setFormData({ ...formData, lat: e.target.value })}
             required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
           <input
             type="number"
@@ -191,7 +191,7 @@ const AdminForm: React.FC = () => {
             value={formData.lng}
             onChange={(e) => setFormData({ ...formData, lng: e.target.value })}
             required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
           <p className="text-sm text-gray-500 mt-1">
             Need to get latitude and longitude for an address?{" "}
@@ -212,7 +212,7 @@ const AdminForm: React.FC = () => {
               setFormData({ ...formData, photo: e.target.value })
             }
             required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
           <p className="text-sm text-gray-500 mt-1">
             Have an image but no photo URL?{" "}
@@ -232,7 +232,7 @@ const AdminForm: React.FC = () => {
               setFormData({ ...formData, description: e.target.value })
             }
             required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
           <button
             type="submit"
