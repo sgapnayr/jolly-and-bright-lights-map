@@ -1,9 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import markers from "@/app/data/markers.json";
-
-const Map = dynamic(() => import("@/components/Map"), { ssr: false });
+import Map from "@/components/Map";
 
 export default function Home() {
   return (

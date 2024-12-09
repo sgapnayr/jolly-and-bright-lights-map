@@ -5,7 +5,7 @@
     "lat": 30.316695,
     "lng": -85.873901,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "Twinkling icicle lights and a glowing snowman bring this home to life!"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "lat": 30.315897,
     "lng": -85.869305,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "A dazzling candy cane pathway with festive red and green lights."
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "lat": 30.316887,
     "lng": -85.873679,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "An elegant display featuring white lights and a golden reindeer family."
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "lat": 30.316216,
     "lng": -85.864953,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "A joyful Santa sleigh centerpiece surrounded by vibrant lights."
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "lat": 30.32289,
     "lng": -85.8561,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "A cozy Christmas cottage look with wreaths and glowing warm lights."
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "lat": 30.3263386,
     "lng": -85.8657193,
     "photo": "/lights.jpg",
-    "description": "Place no longer exists"
+    "description": "This home is no longer decorated but remains on the historic tour."
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "lat": 30.3285623,
     "lng": -85.8673993,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "A stunning mix of blues and whites, creating a winter wonderland theme."
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "lat": 30.316531,
     "lng": -85.86481,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "Classic holiday cheer with multicolored lights and a cheerful snowman."
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "lat": 30.315808,
     "lng": -85.870553,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "A whimsical display with inflatable characters and synchronized music."
   },
   {
     "id": 10,
@@ -77,7 +77,7 @@
     "lat": 30.315533,
     "lng": -85.871906,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "Glistening lights frame the windows, with a large Christmas tree centerpiece."
   },
   {
     "id": 11,
@@ -85,7 +85,7 @@
     "lat": 30.316376,
     "lng": -85.864886,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "A magical house with a nativity scene and glittering star accents."
   },
   {
     "id": 12,
@@ -93,7 +93,7 @@
     "lat": 30.307206,
     "lng": -85.859471,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "An inviting display with light-up palm trees and a beachy holiday vibe."
   },
   {
     "id": 13,
@@ -101,6 +101,6 @@
     "lat": 30.316551,
     "lng": -85.874284,
     "photo": "/lights.jpg",
-    "description": "Beautiful lights with a reindeer display!"
+    "description": "A festive celebration of the season with colorful lights and yard ornaments."
   }
 ]

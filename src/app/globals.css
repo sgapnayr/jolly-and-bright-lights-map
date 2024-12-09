@@ -149,18 +149,31 @@ body {
 /* Navigate Button */
 .navigate-button {
   display: inline-block;
-  padding: 8px 12px;
-  background-color: #4caf50;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #ff5f6d, #ffc371); /* Festive gradient */
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  font-size: 0.9rem;
+  border-radius: 25px; /* Rounded pill shape */
+  font-size: 0.95rem;
   font-weight: bold;
-  transition: background-color 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .navigate-button:hover {
-  background-color: #45a049;
+  transform: translateY(-2px); /* Slight lift on hover */
+  background: linear-gradient(
+    90deg,
+    #ff7e5f,
+    #feb47b
+  ); /* Slightly lighter gradient */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25); /* Deeper shadow */
+}
+
+.navigate-button:active {
+  transform: translateY(1px); /* Push-down effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow */
 }
 
 /* Scrollable List on Mobile */
