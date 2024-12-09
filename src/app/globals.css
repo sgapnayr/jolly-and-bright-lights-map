@@ -82,17 +82,106 @@ body {
   margin: 0;
 }
 
-/* Map Wrapper */
-.map-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-}
-
 /* Custom Marker Icon */
 .custom-marker .custom-icon {
   position: relative;
   width: 44px;
   height: 44px;
+}
+
+/* Map Wrapper */
+.map-wrapper {
+  height: 60%; /* Map takes 60% of the screen height */
+  width: 100%;
+}
+
+/* House List */
+.house-list {
+  height: 40%; /* List takes 40% of the screen height */
+  overflow-y: auto;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  border-top: 2px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual House Card */
+.house-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* House Image */
+.house-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+/* House Details */
+.house-details {
+  flex: 1;
+}
+
+.house-details h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.house-details p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Navigate Button */
+.navigate-button {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.navigate-button:hover {
+  background-color: #45a049;
+}
+
+/* Scrollable List on Mobile */
+@media (max-width: 768px) {
+  .house-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .house-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .house-details h3 {
+    font-size: 1.1rem;
+  }
+
+  .navigate-button {
+    width: 100%;
+    text-align: center;
+  }
 }

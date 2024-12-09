@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -33,7 +34,6 @@ const createCustomIcon = (photoUrl: string) =>
 const Map: React.FC<MapProps> = ({ markers }) => {
   const center: LatLngExpression = [30.3183, -85.8561];
 
-  // Helper function to generate a Google Maps navigation URL
   const generateGoogleMapsUrl = (lat: number, lng: number) => {
     return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
   };
