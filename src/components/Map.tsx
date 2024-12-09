@@ -102,7 +102,7 @@ const Map: React.FC<MapProps> = ({ markers }) => {
               <img
                 src={marker.photo}
                 alt={marker.name}
-                style={{ width: "100%" }}
+                style={{ width: "90%" }}
               />
               <p>{marker.description}</p>
               {/* Navigation Button */}
