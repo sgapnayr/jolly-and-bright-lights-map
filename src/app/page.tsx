@@ -32,7 +32,7 @@ export default function Home() {
         alt="Jolly & Bright Logo"
         width={128}
         height={128}
-        className="absolute z-50 bottom-16 right-4 rounded-lg shadow-xl"
+        className="absolute z-50 md:bottom-8 bottom-16 right-4 rounded-lg shadow-xl"
       />
     </div>
   );
