@@ -97,7 +97,7 @@ const Map: React.FC<MapProps> = ({ markers }) => {
             position={[marker.lat, marker.lng]}
             icon={createCustomIcon(marker.photo)}
           >
-            <Popup>
+            <Popup className="scale-90">
               <h3>{marker.name}</h3>
               <img
                 src={marker.photo}
