@@ -5,14 +5,17 @@ const sheets = google.sheets({
   version: "v4",
   auth: new google.auth.GoogleAuth({
     credentials: {
-      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      private_key: process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY?.replace(
+        /\\n/g,
+        "\n"
+      ),
+      client_email: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL,
     },
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   }),
 });
 
-const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
+const SPREADSHEET_ID = process.env.NEXT_PUBLIC_SPREADSHEET_ID;
 
 export default async function handler(
   req: NextApiRequest,
