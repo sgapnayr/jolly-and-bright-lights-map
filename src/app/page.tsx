@@ -14,7 +14,7 @@ export default function Home() {
       <header className="z-50 bg-gradient-to-r from-red-400 via-pink-500 to-purple-500 text-white py-6 shadow-xl">
         <div className="container mx-auto text-center">
           <h1 className="text-2xl font-bold tracking-widest uppercase">
-            Explore the most festive holiday lights in town!
+            Explore the most festive holiday lights!
           </h1>
           <Link
             className="hover:opacity-50 transition-all active:scale-95"
