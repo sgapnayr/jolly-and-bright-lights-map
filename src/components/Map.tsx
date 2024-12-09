@@ -32,6 +32,8 @@ const createCustomIcon = (photoUrl: string) =>
   });
 
 const Map: React.FC<MapProps> = ({ markers }) => {
+  if (typeof window === "undefined") return null;
+
   const center: LatLngExpression = [30.3183, -85.8561];
 
   const generateGoogleMapsUrl = (lat: number, lng: number) => {
@@ -41,6 +43,7 @@ const Map: React.FC<MapProps> = ({ markers }) => {
   return (
     <div className="map-wrapper">
       <MapContainer
+        key="main-map"
         center={center}
         zoom={13}
         style={{ height: "calc(100vh - 100px)", width: "100%" }}
