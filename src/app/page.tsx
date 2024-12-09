@@ -38,7 +38,7 @@ const markers = [
     id: 5,
     name: "8457 Dreams Float Ct, Panama City Beach, FL 32413",
     lat: 30.32289,
-    lng: -85.864392,
+    lng: -85.8561,
     photo: "/lights.jpg",
     description: "Beautiful lights with a reindeer display!",
   },
