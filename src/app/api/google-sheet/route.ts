@@ -1,68 +1,51 @@
 import { google } from "googleapis";
-import { NextRequest, NextResponse } from "next/server";
-import path from "path";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-// Replace this with your Google Sheet ID
-const SHEET_ID = "14TImVz6e3xS_YFlbWkonIJCLHEtmVQdTt0BnAQzb6zk";
-const RANGE = "Sheet1!A:F"; // Adjust based on your sheet name and columns
-
-// Load the service account key file
-const KEY_PATH = path.join(process.cwd(), "google-service-account.json");
-
-const auth = new google.auth.GoogleAuth({
-  keyFile: KEY_PATH,
-  scopes: [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive",
-  ],
+const sheets = google.sheets({
+  version: "v4",
+  auth: new google.auth.GoogleAuth({
+    credentials: {
+      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+    },
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  }),
 });
 
-export async function GET() {
-  try {
-    const sheets = google.sheets({ version: "v4", auth });
-    const result = await sheets.spreadsheets.values.get({
-      spreadsheetId: SHEET_ID,
-      range: RANGE,
-    });
+// Replace with your actual Google Sheet ID from environment variables
+const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
 
-    const rows = result.data.values || [];
-    const markers = rows.slice(1).map((row, index) => ({
-      id: index + 1,
-      name: row[1],
-      lat: parseFloat(row[2]),
-      lng: parseFloat(row[3]),
-      photo: row[4],
-      description: row[5],
-    }));
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method === "POST") {
+    try {
+      const { name, lat, lng, photo, description } = req.body;
 
-    return NextResponse.json({ markers });
-  } catch {
-    return NextResponse.json(
-      { error: "Failed to fetch data from Google Sheets" },
-      { status: 500 }
-    );
-  }
-}
+      // Validate input
+      if (!name || !lat || !lng || !photo || !description) {
+        return res.status(400).json({
+          message:
+            "All fields (name, lat, lng, photo, description) are required.",
+        });
+      }
 
-export async function POST(request: NextRequest) {
-  try {
-    const { name, lat, lng, photo, description } = await request.json();
+      await sheets.spreadsheets.values.append({
+        spreadsheetId: SPREADSHEET_ID,
+        range: "Sheet1!A:E",
+        valueInputOption: "USER_ENTERED",
+        requestBody: {
+          values: [[name, lat, lng, photo, description]],
+        },
+      });
 
-    const sheets = google.sheets({ version: "v4", auth });
-    await sheets.spreadsheets.values.append({
-      spreadsheetId: SHEET_ID,
-      range: RANGE,
-      valueInputOption: "USER_ENTERED",
-      requestBody: {
-        values: [[Date.now(), name, lat, lng, photo, description]],
-      },
-    });
-
-    return NextResponse.json({ success: true });
-  } catch {
-    return NextResponse.json(
-      { error: "Failed to update Google Sheets" },
-      { status: 500 }
-    );
+      res.status(200).json({ message: "Data added successfully" });
+    } catch (error) {
+      console.error("Error appending data to Google Sheet:", error);
+      res.status(500).json({ message: "Failed to add data" });
+    }
+  } else {
+    res.status(405).json({ message: "Method not allowed" });
   }
 }

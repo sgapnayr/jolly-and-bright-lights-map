@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
+import toast, { Toaster } from "react-hot-toast";
 
 const AdminForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -26,15 +27,19 @@ const AdminForm: React.FC = () => {
       adminCredentials.username === "kate" &&
       adminCredentials.password === "kateisawesome"
     ) {
+      toast.success("Login successful!");
       setIsAuthenticated(true);
       setIsModalOpen(false);
     } else {
-      alert("Invalid credentials. Try again.");
+      toast.error("Invalid credentials. Try again.");
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Show a loading toast
+    const toastId = toast.loading("Submitting data...");
 
     try {
       const response = await fetch("/api/google-sheet", {
@@ -44,7 +49,7 @@ const AdminForm: React.FC = () => {
       });
 
       if (response.ok) {
-        alert("Marker added!");
+        toast.success("Marker added!", { id: toastId });
         setFormData({
           name: "",
           lat: "",
@@ -53,15 +58,20 @@ const AdminForm: React.FC = () => {
           description: "",
         });
       } else {
-        alert("Failed to add marker");
+        toast.error("Failed to add marker.", { id: toastId });
       }
     } catch {
-      alert("An error occurred");
+      toast.error("An error occurred. Please try again.", { id: toastId });
+    } finally {
+      setTimeout(() => {
+        toast.dismiss(toastId);
+      }, 1000);
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4 relative">
+      <Toaster position="top-center" reverseOrder={false} />
       {/* Admin Login Modal */}
       <AnimatePresence>
         {isModalOpen && (
