@@ -13,18 +13,18 @@ export default function Home() {
     <div className="relative min-h-screen bg-gradient-to-b from-blue-100 to-white">
       <header className="z-50 bg-gradient-to-r from-red-400 via-pink-500 to-purple-500 text-white py-6 shadow-xl">
         <div className="container mx-auto text-center">
+          <h1 className="text-2xl font-bold tracking-widest uppercase">
+            Explore the most festive holiday lights in town!
+          </h1>
           <Link
             className="hover:opacity-50 transition-all active:scale-95"
             target="_blank"
             href={"https://jollyandbrightlights.com/pages/contact"}
           >
-            <h1 className="text-2xl font-bold tracking-widest uppercase">
-              Want Custom Christmas Lights?
-            </h1>
+            <p className="mt-2 text-xs font-light tracking-wide opacity-50">
+              Want Custom Christmas Lights? Click here!
+            </p>
           </Link>
-          <p className="mt-2 text-xs font-light tracking-wide opacity-50">
-            Explore the most festive holiday lights in town!
-          </p>
         </div>
       </header>
 
@@ -37,7 +37,7 @@ export default function Home() {
         alt="Jolly & Bright Logo"
         width={128}
         height={128}
-        className="absolute z-50 md:bottom-8 bottom-16 right-16 md:right-8 rounded-lg shadow-xl"
+        className="absolute z-50 top-44 right-4 rounded-lg shadow-xl"
       />
     </div>
   );
