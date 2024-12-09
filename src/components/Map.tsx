@@ -66,10 +66,10 @@ const RecenterButton: React.FC<{ center: LatLngExpression }> = ({ center }) => {
   return (
     <button
       onClick={handleRecenter}
-      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition z-50"
+      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-xl hover:bg-blue-600 transition z-50"
       style={{ zIndex: 9999 }}
     >
-      Re-center
+      GO TO CENTER
     </button>
   );
 };
