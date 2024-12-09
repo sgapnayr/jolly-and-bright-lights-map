@@ -19,7 +19,7 @@ export default function Home() {
           <Link
             className="hover:opacity-50 transition-all active:scale-95"
             target="_blank"
-            href={"https://jollyandbrightlights.com/pages/contact"}
+            href={"https://jollyandbrightlights.com/"}
           >
             <p className="mt-2 text-xs font-light tracking-wide opacity-50">
               Want Custom Christmas Lights? Click here!

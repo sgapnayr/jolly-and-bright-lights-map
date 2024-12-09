@@ -109,9 +109,17 @@ const Map: React.FC<MapProps> = ({ markers }) => {
                 href={`https://www.google.com/maps/dir/?api=1&destination=${marker.lat},${marker.lng}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block mt-2 text-center px-4 py-2 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition"
+                className="block mt-2 text-center px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition"
               >
                 Navigate Here
+              </a>
+              <a
+                href={`https://www.facebook.com/groups/1253447752522429/?_rdr`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mt-2 text-center px-4 py-2 text-blue-500 font-bold rounded-lg hover:text-blue-600 transition"
+              >
+                Want to list your house?
               </a>
             </Popup>
           </Marker>
