@@ -13,6 +13,7 @@ import "leaflet/dist/leaflet.css";
 import { LatLngExpression } from "leaflet";
 import L from "leaflet";
 import { useState } from "react";
+import Link from "next/link";
 
 export type MarkerData = {
   id: number;
@@ -66,7 +67,7 @@ const RecenterButton: React.FC<{ center: LatLngExpression }> = ({ center }) => {
   return (
     <button
       onClick={handleRecenter}
-      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-xl hover:bg-blue-600 transition z-50"
+      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-[#0078a8] text-white font-semibold rounded-lg shadow-xl hover:opacity-50 transition z-50"
       style={{ zIndex: 9999 }}
     >
       GO TO CENTER
@@ -84,7 +85,7 @@ const Map: React.FC<MapProps> = ({ markers }) => {
         key="main-map"
         center={center}
         zoom={13}
-        style={{ height: "calc(101vh - 100px)", width: "100%" }}
+        style={{ height: "calc(101vh - 100px)", width: "100%", color: "white" }}
       >
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
@@ -105,19 +106,19 @@ const Map: React.FC<MapProps> = ({ markers }) => {
               />
               <p>{marker.description}</p>
               {/* Navigation Button */}
-              <a
+              <Link
                 href={`https://www.google.com/maps/dir/?api=1&destination=${marker.lat},${marker.lng}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block mt-2 text-center px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition"
+                className="block mt-2 text-center px-4 py-2 border-[#0078a8] border-2 text-white font-bold rounded-lg hover:opacity-50 transition"
               >
                 Navigate Here
-              </a>
+              </Link>
               <a
                 href={`https://www.facebook.com/groups/1253447752522429/?_rdr`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block mt-2 text-center px-4 py-2 text-blue-500 font-bold rounded-lg hover:text-blue-600 transition"
+                className="block mt-2 text-center px-4 py-2 text-[#0078a8] font-bold rounded-lg hover:opacity-50 transition"
               >
                 Want to list your house?
               </a>
