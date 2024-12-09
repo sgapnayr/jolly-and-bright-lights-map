@@ -32,13 +32,15 @@ export default function Home() {
         <Map markers={markers} />
       </main>
 
-      <Image
-        src="/logo.jpg"
-        alt="Jolly & Bright Logo"
-        width={128}
-        height={128}
-        className="absolute z-50 top-44 right-4 rounded-lg shadow-xl"
-      />
+      <Link href={"/admin"}>
+        <Image
+          src="/logo.jpg"
+          alt="Jolly & Bright Logo"
+          width={128}
+          height={128}
+          className="absolute z-50 top-44 right-4 rounded-lg shadow-xl"
+        />
+      </Link>
     </div>
   );
 }
