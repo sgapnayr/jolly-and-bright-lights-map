@@ -50,7 +50,7 @@ const MapEventHandler: React.FC<{
       const currentCenter = map.getCenter();
       const distance = map.distance(currentCenter, L.latLng(center));
 
-      onShowRecenter(distance > 500);
+      onShowRecenter(distance > 3500);
     },
   });
 
