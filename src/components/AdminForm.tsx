@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MarkerData } from "@/app/components/Map";
+import { MarkerData } from "@/components/Map";
 import markers from "@/app/data/markers.json";
 import saveMarkers from "@/utils/saveMarkers";
 

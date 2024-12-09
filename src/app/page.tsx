@@ -1,17 +1,20 @@
-import Map from "./components/Map";
+"use client";
+
 import "./globals.css";
 import markers from "@/app/data/markers.json";
+import Map from "@/components/Map";
 
 export default function Home() {
   return (
     <div>
-      {/* Header */}
       <header className="header">
         <h1>Hosted by Jolly & Bright</h1>
       </header>
-
-      {/* Map */}
-      <Map markers={markers} />
+      {typeof window !== "undefined" ? (
+        <Map markers={markers} />
+      ) : (
+        <p>Loading map...</p>
+      )}
     </div>
   );
 }

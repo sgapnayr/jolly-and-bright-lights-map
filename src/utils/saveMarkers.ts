@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { MarkerData } from "@/app/components/Map";
+import { MarkerData } from "@/components/Map";
 
 const filePath = path.resolve("./src/data/markers.json");
 
